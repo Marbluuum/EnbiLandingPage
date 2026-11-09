@@ -1,0 +1,496 @@
+@import "tailwindcss";
+
+/*
+ * ENBI design system — ported from the brand's original landing page custom code
+ * (Neulis Sans 400 everywhere, -0.04em tracking, #0044F1 → #00278B gradient, #d0d0d0 card borders).
+ */
+@theme inline {
+  --color-brand: #0044f1;
+  --color-brand-deep: #00278b;
+  --color-brand-dot: #0022ff;
+  --color-ink: #000000;
+  --color-navy: #0e182c;
+  --color-muted: rgb(0 0 0 / 0.6);
+  --color-gray-band: #f7f7f7;
+  --color-card-border: #d0d0d0;
+  --color-hairline: #e7e7e7;
+  --color-divider: #d9d9d9;
+  --font-sans: var(--font-neulis), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #000;
+  letter-spacing: -0.02em;
+}
+
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ---------- Titles ---------- */
+.enbi-h2 {
+  font-size: 26px;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+.enbi-sub {
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  color: var(--color-brand);
+}
+@media (min-width: 768px) {
+  .enbi-h2 {
+    font-size: 34px;
+    line-height: 40px;
+  }
+  .enbi-sub {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+@media (min-width: 1025px) {
+  .enbi-h2 {
+    font-size: 44px;
+    line-height: 52px;
+  }
+}
+
+/* ---------- Animated gradient hero (from #section-tvaULPzcHb) ---------- */
+.enbi-hero-bg {
+  background: linear-gradient(120deg, #0044f1, #00278b, #0044f1);
+  background-size: 400% 400%;
+  animation: enbi-move-gradient 12s ease-in-out infinite;
+}
+
+/* ---------- CTA: animated gradient pill + white circled arrow ---------- */
+.enbi-cta {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 292px;
+  height: 53px;
+  padding: 0 28px;
+  border-radius: 50px;
+  font-size: 20px;
+  color: #fff;
+  background: linear-gradient(90deg, #0044f1, #00278b, #0044f1);
+  background-size: 300% 300%;
+  animation: enbi-move-gradient 6s ease infinite;
+  box-shadow: 0 4px 12px rgb(0 68 241 / 0.35);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.enbi-cta:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 20px rgb(0 68 241 / 0.55);
+}
+.enbi-cta:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgb(255 255 255 / 0.25);
+  transform: skewX(-25deg);
+  animation: enbi-shine 0.9s ease;
+}
+.enbi-cta--sm {
+  min-width: 0;
+  height: 44px;
+  padding: 0 20px;
+  font-size: 16px;
+  gap: 10px;
+}
+
+/* White version with animated gradient border, used on the blue hero */
+.enbi-cta-white {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 292px;
+  height: 53px;
+  padding: 0 22px;
+  border-radius: 50px;
+  font-size: 20px;
+  color: #0044f1;
+  border: 1.5px solid transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(90deg, #0044f1, #00278b, #0044f1);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 100% 100%, 300% 300%;
+  animation: enbi-border-move 6s ease infinite;
+  box-shadow: 0 2px 10px rgb(0 68 241 / 0.12);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+.enbi-cta-white:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 22px rgb(0 68 241 / 0.28);
+  color: #00278b;
+}
+.enbi-cta-white::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(90deg, rgb(0 68 241 / 0) 0%, rgb(0 68 241 / 0.14) 50%, rgb(0 68 241 / 0) 100%);
+  transform: skewX(-25deg);
+  opacity: 0;
+  z-index: -1;
+}
+.enbi-cta-white:hover::after {
+  animation: enbi-shine 0.9s ease;
+}
+
+/* Secondary action on the blue gradient */
+.enbi-btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 53px;
+  padding: 0 28px;
+  border-radius: 50px;
+  border: 1.5px solid rgb(255 255 255 / 0.6);
+  color: #fff;
+  font-size: 20px;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+.enbi-btn-outline-light:hover {
+  background: rgb(255 255 255 / 0.1);
+  border-color: #fff;
+}
+
+.enbi-cta-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.enbi-cta:hover .enbi-cta-icon,
+.enbi-cta-white:hover /* Secondary action on the blue gradient */
+.enbi-btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 53px;
+  padding: 0 28px;
+  border-radius: 50px;
+  border: 1.5px solid rgb(255 255 255 / 0.6);
+  color: #fff;
+  font-size: 20px;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+.enbi-btn-outline-light:hover {
+  background: rgb(255 255 255 / 0.1);
+  border-color: #fff;
+}
+
+.enbi-cta-icon {
+  transform: translateX(4px);
+}
+
+/* ---------- Badges ---------- */
+.enbi-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 24px;
+  border: 1px solid #e7e7e7;
+  border-radius: 100px;
+  background: #fff;
+  box-shadow: 0 0 4px rgb(0 0 0 / 0.25);
+  font-size: 18px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.enbi-badge:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 8px rgb(0 68 241 / 0.25);
+}
+.enbi-badge--on-blue {
+  background: transparent;
+  border-color: rgb(255 255 255 / 0.35);
+  box-shadow: none;
+  color: #fff;
+  font-size: 15px;
+  height: 36px;
+}
+.enbi-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #0022ff;
+  flex-shrink: 0;
+  animation: enbi-pulse 1.6s infinite ease-in-out;
+}
+.enbi-badge--on-blue .enbi-dot {
+  background: #fff;
+  animation-name: enbi-pulse-white;
+}
+
+.enbi-tbadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 27px;
+  padding: 0 18px;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #0044f1 0%, #00278b 100%);
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.enbi-tbadge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px rgb(0 68 241 / 0.35);
+}
+
+/* ---------- Cards ---------- */
+.enbi-card {
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.enbi-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 14px rgb(0 68 241 / 0.25);
+}
+.enbi-card--lg {
+  border-radius: 20px;
+}
+.enbi-card--lg:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 18px rgb(0 68 241 / 0.25);
+}
+.enbi-card-icon {
+  transition: transform 0.25s ease;
+}
+.enbi-card:hover .enbi-card-icon {
+  transform: scale(1.08);
+}
+.enbi-card-title {
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+}
+.enbi-card-text {
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.04em;
+  color: rgb(0 0 0 / 0.6);
+}
+.enbi-card--highlight {
+  border-color: transparent;
+  background: linear-gradient(90deg, #0044f1 0%, #00278b 100%);
+  color: #fff;
+}
+.enbi-card--highlight .enbi-card-text {
+  color: rgb(255 255 255 / 0.75);
+}
+
+/* ---------- Orbit ("Esto vas a obtener") ---------- */
+.enbi-orbit-ring {
+  position: absolute;
+  inset: var(--inset);
+  border-radius: 999px;
+  border: 1.5px solid #ececec;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.06);
+}
+.enbi-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 100px;
+  padding: 4px 14px;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 0.25);
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.3s ease;
+}
+.enbi-bubble:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgb(0 68 241 / 0.25);
+}
+@media (min-width: 1025px) {
+  .enbi-bubble {
+    font-size: 20px;
+    line-height: 33px;
+  }
+}
+
+/* ---------- Client logo marquee ---------- */
+.enbi-marquee-track {
+  animation: enbi-marquee 35s linear infinite;
+}
+.enbi-marquee:hover .enbi-marquee-track,
+.enbi-marquee:focus-within .enbi-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes enbi-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .enbi-marquee {
+    mask-image: none !important;
+  }
+  .enbi-marquee-track {
+    animation: none;
+    width: auto;
+    justify-content: center;
+  }
+  .enbi-marquee-track > ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 16px;
+    row-gap: 24px;
+  }
+  .enbi-marquee-track > ul[aria-hidden],
+  .enbi-marquee-track > ul + ul {
+    display: none;
+  }
+}
+
+/* ---------- FAQ ---------- */
+.enbi-faq-q {
+  font-size: 19px;
+  line-height: 26px;
+  letter-spacing: -0.03em;
+}
+@media (min-width: 768px) {
+  .enbi-faq-q {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
+/* ---------- Scroll reveal (progressive: only where scroll-driven animations exist) ---------- */
+@supports (animation-timeline: view()) {
+  .enbi-reveal > * {
+    animation: enbi-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes enbi-move-gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes enbi-border-move {
+  0%,
+  100% {
+    background-position: 0 0, 0% 50%;
+  }
+  50% {
+    background-position: 0 0, 100% 50%;
+  }
+}
+@keyframes enbi-shine {
+  0% {
+    left: -75%;
+    opacity: 0;
+  }
+  50% {
+    left: 125%;
+    opacity: 1;
+  }
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+@keyframes enbi-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgb(0 68 241 / 0.45);
+  }
+  50% {
+    transform: scale(1.4);
+    box-shadow: 0 0 6px rgb(0 68 241 / 0.75);
+  }
+}
+@keyframes enbi-pulse-white {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgb(255 255 255 / 0.4);
+  }
+  50% {
+    transform: scale(1.4);
+    box-shadow: 0 0 6px rgb(255 255 255 / 0.8);
+  }
+}
+/* Movement only: fading text in would briefly fail contrast checks */
+@keyframes enbi-reveal {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .enbi-hero-bg,
+  .enbi-cta,
+  .enbi-cta-white,
+  .enbi-dot,
+  .enbi-reveal > * {
+    animation: none !important;
+  }
+}
