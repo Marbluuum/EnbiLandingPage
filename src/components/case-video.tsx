@@ -43,7 +43,8 @@ export function VideoFacade({ src, poster, label, duration, aspect, priority = f
         src={poster}
         alt=""
         fill
-        priority={priority}
+        preload={priority}
+        fetchPriority={priority ? "high" : undefined}
         sizes={sizes ?? "(min-width: 1024px) 300px, (min-width: 640px) 45vw, 90vw"}
         className="object-cover object-[50%_45%]"
       />

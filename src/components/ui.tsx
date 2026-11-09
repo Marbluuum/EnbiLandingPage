@@ -35,7 +35,7 @@ export function Logo({
       width={light ? 254 : 258}
       height={56}
       className={className}
-      priority={priority}
+      loading={priority ? "eager" : undefined}
     />
   );
 }

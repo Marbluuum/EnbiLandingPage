@@ -76,8 +76,9 @@ export function FounderPhoto({ priority = false, className = "" }: { priority?: 
         alt={`${founder.name}, ${founder.role} de ENBI Consulting`}
         width={founder.photo.width}
         height={founder.photo.height}
-        priority={priority}
-        sizes="(min-width: 1024px) 420px, 80vw"
+        preload={priority}
+        fetchPriority={priority ? "high" : undefined}
+        sizes="(min-width: 1024px) 420px, min(360px, 80vw)"
         className="h-auto w-full rounded-[20px] object-cover"
       />
       <figcaption className="absolute right-4 bottom-4 left-4 rounded-[14px] bg-white/95 px-5 py-4 shadow-[0_0_14px_rgb(0_0_0/0.12)] backdrop-blur">
