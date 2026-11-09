@@ -245,6 +245,17 @@ details > summary::-webkit-details-marker {
   color: #fff;
   font-size: 15px;
   height: 36px;
+  max-width: 100%;
+  white-space: nowrap;
+}
+/* Phones: keep the hero badge on one line inside its pill. */
+@media (max-width: 420px) {
+  .enbi-badge--on-blue {
+    font-size: 12.5px;
+    gap: 8px;
+    height: 32px;
+    padding: 0 14px;
+  }
 }
 .enbi-dot {
   width: 7px;

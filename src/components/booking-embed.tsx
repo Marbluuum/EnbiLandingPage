@@ -13,7 +13,7 @@ export function BookingEmbed() {
   if (open) {
     return (
       <div className="overflow-hidden rounded-[20px] border border-card-border">
-        <BookingCalendar />
+        <BookingCalendar eager />
       </div>
     );
   }
