@@ -11,7 +11,9 @@ function ClientMark({ client, hidden = false }: { client: (typeof clients)[numbe
       alt={hidden ? "" : client.name}
       width={client.logo.width}
       height={client.logo.height}
-      className="h-8 w-auto max-w-[150px] object-contain opacity-60 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+      sizes={`${Math.ceil((client.logo.display * client.logo.width) / client.logo.height)}px`}
+      style={{ height: client.logo.display }}
+      className="w-auto max-w-none opacity-55 transition-opacity duration-300 group-hover:opacity-100"
     />
   ) : (
     <span className="text-[22px] leading-6 tracking-[-0.04em] whitespace-nowrap text-black/60 transition-colors duration-300 group-hover:text-brand">

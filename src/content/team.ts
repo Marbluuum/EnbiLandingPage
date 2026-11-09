@@ -2,7 +2,7 @@ export const founder = {
   name: "Martin Bufczyk",
   role: "Founder & CEO",
   location: "Buenos Aires, Argentina",
-  photo: { src: "/equipo/martin-bufczyk.webp", width: 560, height: 700 },
+  photo: { src: "/equipo/martin-bufczyk-2026.webp", width: 560, height: 700 },
   linkedin: "https://www.linkedin.com/in/martinbufczyk/",
   website: "https://www.martinbufczyk.com/",
   quote:

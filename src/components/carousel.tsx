@@ -70,7 +70,9 @@ export function Carousel({
             key={i}
             aria-roledescription="diapositiva"
             aria-label={`${i + 1} de ${items.length}`}
-            className="w-[85%] shrink-0 snap-start sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-50px)/3)]"
+            // `relative` keeps absolutely positioned children (e.g. sr-only labels) inside the scroller,
+            // otherwise they escape it and widen the page.
+            className="relative w-[85%] shrink-0 snap-start sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-50px)/3)]"
           >
             {child}
           </li>
