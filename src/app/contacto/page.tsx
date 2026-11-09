@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 
 const title = "Agendá una reunión con ENBI";
 const description =
-  "Reunión de conocimiento de 45 minutos: conversamos, entendemos cómo vendés hoy y vemos cómo podemos trabajar juntos.";
+  "Reunión de conocimiento de 30 minutos: conversamos, entendemos cómo vendés hoy y vemos cómo podemos trabajar juntos.";
 
 export const metadata: Metadata = {
   title: "Contacto",
@@ -38,7 +38,7 @@ export default function ContactoPage() {
             <h2 id="agenda-title" className="enbi-h2">
               ENBI Sesión
             </h2>
-            <p className="enbi-sub mt-2.5">45 minutos · Sin compromiso</p>
+            <p className="enbi-sub mt-2.5">30 minutos · Sin compromiso</p>
             <ul className="mt-8 space-y-5">
               {agenda.map((a) => (
                 <li key={a} className="flex gap-3 text-lg leading-6 text-black/70">

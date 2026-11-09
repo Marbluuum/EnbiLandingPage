@@ -183,7 +183,7 @@ export default function Home() {
               Hablemos de cómo hacer crecer tu empresa
             </h2>
             <p className="mt-4 text-lg text-white/85 md:text-xl">
-              Elegí el día y horario que te quede mejor. Reunión de conocimiento de 45 minutos, sin compromiso.
+              Elegí el día y horario que te quede mejor. Reunión de conocimiento de 30 minutos, sin compromiso.
             </p>
           </div>
           <div className="mx-auto mt-10 max-w-[1000px] overflow-hidden rounded-[20px] bg-white shadow-[0_20px_60px_rgb(0_0_0/0.3)]">
