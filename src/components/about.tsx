@@ -48,6 +48,9 @@ export function LogoWall({ label = "Confían en ENBI" }: { label?: string }) {
         <h2 id="clientes-title" className="text-center text-[15px] tracking-[0.02em] text-black/60 uppercase">
           {label}
         </h2>
+        <p className="mt-2 text-center text-[17px] tracking-[-0.02em] text-ink">
+          Presencia en todo <span className="text-brand">Latinoamérica y España</span>
+        </p>
       </Container>
       <div className="enbi-marquee mt-7 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
         <div className="enbi-marquee-track flex w-max">

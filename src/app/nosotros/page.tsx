@@ -99,7 +99,7 @@ export default function NosotrosPage() {
         </div>
       </Band>
 
-      <LogoWall label="Empresas que trabajan con ENBI" />
+      <LogoWall />
 
       <Band aria-labelledby="testimonios-title">
         <SectionTitle id="testimonios-title" eyebrow="Casos de éxito" title="Lo que dicen de nosotros" />

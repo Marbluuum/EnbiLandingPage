@@ -69,6 +69,10 @@ const organization = {
       slogan: "Dejá de depender de referidos para conseguir proyectos nuevos.",
       founder: { "@id": `${site.url}/#founder` },
       address: { "@type": "PostalAddress", addressLocality: "Buenos Aires", addressCountry: "AR" },
+      areaServed: [
+        { "@type": "Place", name: "Latinoamérica" },
+        { "@type": "Country", name: "España" },
+      ],
     },
     {
       "@type": "Person",
