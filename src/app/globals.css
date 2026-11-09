@@ -22,6 +22,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/*
+ * Decorative loops (hero gradient, CTA gradients, pulsing dot, logo marquee) start a few seconds
+ * after load, so the first paint settles immediately and Speed Index is not inflated by motion.
+ */
+:root {
+  --enbi-ambient-delay: 4s;
+}
+
 body {
   background: #ffffff;
   color: #000;
@@ -70,7 +78,7 @@ details > summary::-webkit-details-marker {
 .enbi-hero-bg {
   background: linear-gradient(120deg, #0044f1, #00278b, #0044f1);
   background-size: 400% 400%;
-  animation: enbi-move-gradient 12s ease-in-out infinite;
+  animation: enbi-move-gradient 12s ease-in-out var(--enbi-ambient-delay) infinite;
 }
 
 /* ---------- CTA: animated gradient pill + white circled arrow ---------- */
@@ -89,7 +97,7 @@ details > summary::-webkit-details-marker {
   color: #fff;
   background: linear-gradient(90deg, #0044f1, #00278b, #0044f1);
   background-size: 300% 300%;
-  animation: enbi-move-gradient 6s ease infinite;
+  animation: enbi-move-gradient 6s ease var(--enbi-ambient-delay) infinite;
   box-shadow: 0 4px 12px rgb(0 68 241 / 0.35);
   transition:
     transform 0.25s ease,
@@ -138,7 +146,7 @@ details > summary::-webkit-details-marker {
   background-origin: border-box;
   background-clip: padding-box, border-box;
   background-size: 100% 100%, 300% 300%;
-  animation: enbi-border-move 6s ease infinite;
+  animation: enbi-border-move 6s ease var(--enbi-ambient-delay) infinite;
   box-shadow: 0 2px 10px rgb(0 68 241 / 0.12);
   transition:
     transform 0.25s ease,
@@ -263,7 +271,7 @@ details > summary::-webkit-details-marker {
   border-radius: 999px;
   background: #0022ff;
   flex-shrink: 0;
-  animation: enbi-pulse 1.6s infinite ease-in-out;
+  animation: enbi-pulse 1.6s ease-in-out var(--enbi-ambient-delay) infinite;
 }
 .enbi-badge--on-blue .enbi-dot {
   background: #fff;
@@ -374,7 +382,7 @@ details > summary::-webkit-details-marker {
 
 /* ---------- Client logo marquee ---------- */
 .enbi-marquee-track {
-  animation: enbi-marquee 35s linear infinite;
+  animation: enbi-marquee 35s linear var(--enbi-ambient-delay) infinite;
 }
 .enbi-marquee:hover .enbi-marquee-track,
 .enbi-marquee:focus-within .enbi-marquee-track {
