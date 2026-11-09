@@ -66,24 +66,26 @@ export function StepsCards() {
 
 /** "Esto vas a obtener": ENBI logo inside concentric rings with floating bubbles. */
 export function Orbit() {
+  // Desktop: bubbles orbit around the logo. Phones/tablets: rings + logo on top, bubbles listed below
+  // (absolute bubbles don't fit a narrow screen and got clipped at the edges).
   const positions = [
-    "top-[-10px] left-[40px] lg:top-[100px] lg:left-[-130px]",
-    "top-[50px] left-[-10px] lg:top-1/2 lg:left-[-180px] lg:-translate-y-1/2",
-    "bottom-[-20px] left-[60px] lg:bottom-[10%] lg:left-[-160px]",
-    "top-[85px] right-[-10px] lg:top-[8%] lg:right-[-50px]",
-    "top-[270px] right-[-10px] -translate-y-1/2 lg:top-[40%] lg:right-[-170px]",
-    "bottom-[85px] right-[155px] lg:bottom-[20%] lg:right-[-100px]",
+    "lg:top-[100px] lg:left-[-130px]",
+    "lg:top-1/2 lg:left-[-180px] lg:-translate-y-1/2",
+    "lg:bottom-[10%] lg:left-[-160px]",
+    "lg:top-[8%] lg:right-[-50px]",
+    "lg:top-[40%] lg:right-[-170px]",
+    "lg:bottom-[20%] lg:right-[-100px]",
   ];
   return (
-    <div className="flex justify-center overflow-hidden py-[60px]">
-      <div className="relative h-[340px] w-[340px] lg:h-[524px] lg:w-[524px]">
+    <div className="flex flex-col items-center py-10 lg:overflow-hidden lg:py-[60px]">
+      <div className="relative h-[240px] w-[240px] sm:h-[300px] sm:w-[300px] lg:h-[524px] lg:w-[524px]">
         {["0%", "6%", "11%", "16%"].map((inset) => (
           <span key={inset} className="enbi-orbit-ring" style={{ "--inset": inset } as React.CSSProperties} aria-hidden="true" />
         ))}
         <div className="absolute inset-0 flex items-center justify-center">
-          <Image src="/brand/logo-dark.png" alt="" width={258} height={56} className="h-10 w-auto lg:h-14" />
+          <Image src="/brand/logo-dark.png" alt="" width={258} height={56} className="h-9 w-auto lg:h-14" />
         </div>
-        <ul>
+        <ul className="hidden lg:block">
           {outcomes.map((o, i) => (
             <li key={o} className={`absolute ${positions[i]}`}>
               <span className="enbi-bubble">
@@ -94,6 +96,16 @@ export function Orbit() {
           ))}
         </ul>
       </div>
+      <ul className="mt-8 flex max-w-[560px] flex-wrap justify-center gap-3 lg:hidden">
+        {outcomes.map((o) => (
+          <li key={o}>
+            <span className="enbi-bubble">
+              <span className="h-[7px] w-[7px] rounded-full bg-brand-dot" aria-hidden="true" />
+              {o}
+            </span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

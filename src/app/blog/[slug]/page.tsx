@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CtaBand, PostCard, breadcrumbJsonLd } from "@/components/sections";
+import { CtaBand, PostCard, breadcrumbJsonLd, faqJsonLd } from "@/components/sections";
 import { Band, BookingButton, Breadcrumbs, Container, CtaRow, JsonLd } from "@/components/ui";
-import { type Block, formatDate, getPost, posts } from "@/content/posts";
+import { type Block, formatDate, getPost, posts, slugify } from "@/content/posts";
 import { site } from "@/content/site";
 import { founder } from "@/content/team";
 
@@ -20,6 +20,7 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">): Promis
   return {
     title: post.title,
     description: post.description,
+    keywords: post.keywords,
     alternates: { canonical: url },
     openGraph: {
       type: "article",
@@ -37,7 +38,7 @@ function renderBlock(block: Block, i: number) {
   switch (block.type) {
     case "h2":
       return (
-        <h2 key={i} className="mt-14 text-[28px] leading-[34px] tracking-[-0.04em] text-balance md:text-[34px] md:leading-[40px]">
+        <h2 key={i} id={slugify(block.text)} className="mt-14 text-[28px] leading-[34px] tracking-[-0.04em] text-balance md:text-[34px] md:leading-[40px]">
           {block.text}
         </h2>
       );
@@ -94,7 +95,10 @@ export default async function PostPage(props: PageProps<"/blog/[slug]">) {
   if (!post) notFound();
 
   const url = `${site.url}/blog/${post.slug}`;
-  const related = posts.filter((p) => p.slug !== post.slug).slice(0, 2);
+  // Same-category articles first (topic clusters help SEO), then the most recent.
+  const others = posts.filter((p) => p.slug !== post.slug);
+  const related = [...others.filter((p) => p.category === post.category), ...others.filter((p) => p.category !== post.category)].slice(0, 2);
+  const toc = post.body.filter((b) => b.type === "h2");
 
   return (
     <>
@@ -110,11 +114,16 @@ export default async function PostPage(props: PageProps<"/blog/[slug]">) {
           dateModified: post.updated ?? post.date,
           inLanguage: "es",
           articleSection: post.category,
+          keywords: post.keywords.join(", "),
+          abstract: post.answer,
           image: `${site.url}/opengraph-image`,
           author: { "@id": `${site.url}/#founder` },
           publisher: { "@id": `${site.url}/#organization` },
+          // Tells voice assistants / answer engines which parts summarise the article.
+          speakable: { "@type": "SpeakableSpecification", cssSelector: ["#respuesta-rapida", "h1"] },
         }}
       />
+      <JsonLd data={faqJsonLd(post.faqs, url)} />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Inicio", url: site.url },
@@ -128,7 +137,14 @@ export default async function PostPage(props: PageProps<"/blog/[slug]">) {
           <Container className="max-w-[860px] py-14 text-center md:py-20">
             <Breadcrumbs onBlue items={[{ name: "Inicio", href: "/" }, { name: "Blog", href: "/blog" }, { name: post.category }]} />
             <p className="mt-6 text-sm text-white/80">
-              <time dateTime={post.date}>{formatDate(post.date)}</time> · {post.readingMinutes} min de lectura
+              <time dateTime={post.date}>{formatDate(post.date)}</time>
+              {post.updated && post.updated !== post.date && (
+                <>
+                  {" "}
+                  · Actualizado el <time dateTime={post.updated}>{formatDate(post.updated)}</time>
+                </>
+              )}{" "}
+              · {post.readingMinutes} min de lectura
             </p>
             <h1 className="mt-4 text-[30px] leading-[36px] tracking-[-0.04em] text-balance md:text-[46px] md:leading-[52px]">
               {post.title}
@@ -138,7 +154,49 @@ export default async function PostPage(props: PageProps<"/blog/[slug]">) {
         </header>
 
         <Container className="max-w-[760px] py-[45px] text-[18px] leading-[29px] tracking-[-0.01em] text-black/80 md:py-[70px]">
+          <section
+            id="respuesta-rapida"
+            aria-labelledby="respuesta-rapida-title"
+            className="rounded-[20px] border border-brand/25 bg-brand/[0.04] p-6 md:p-8"
+          >
+            <h2 id="respuesta-rapida-title" className="text-sm tracking-[0.02em] text-brand uppercase">
+              Respuesta rápida
+            </h2>
+            <p className="mt-3 text-[19px] leading-[30px] text-black/85">{post.answer}</p>
+          </section>
+
+          {toc.length > 2 && (
+            <nav aria-labelledby="indice-title" className="mt-10">
+              <h2 id="indice-title" className="text-sm tracking-[0.02em] text-black/60 uppercase">
+                En este artículo
+              </h2>
+              <ol className="mt-3 space-y-1.5 text-base">
+                {toc.map((h) => (
+                  <li key={h.text}>
+                    <a href={`#${slugify(h.text)}`} className="text-black/75 underline-offset-4 hover:text-brand hover:underline">
+                      {h.text.replace(/^\d+\.\s*/, "")}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
+
           {post.body.map(renderBlock)}
+
+          <section aria-labelledby="faq-title" className="mt-16">
+            <h2 id="faq-title" className="text-[28px] leading-[34px] tracking-[-0.04em] md:text-[34px] md:leading-[40px]">
+              Preguntas frecuentes
+            </h2>
+            <div className="mt-6 divide-y divide-hairline border-y border-hairline">
+              {post.faqs.map((f) => (
+                <div key={f.q} className="py-6">
+                  <h3 className="text-[20px] leading-[28px] tracking-[-0.03em] text-black">{f.q}</h3>
+                  <p className="mt-2">{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
           <aside aria-label="Sobre el autor" className="mt-16 flex items-center gap-5 border-y border-hairline py-8">
             <Image
