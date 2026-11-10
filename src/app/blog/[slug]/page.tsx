@@ -67,6 +67,21 @@ function renderBlock(block: Block, i: number) {
           ))}
         </ol>
       );
+    case "links":
+      return (
+        <aside key={i} aria-label={block.title ?? "Leé también"} className="mt-8 rounded-[20px] bg-gray-band p-6">
+          <p className="text-sm tracking-[0.02em] text-black/60 uppercase">{block.title ?? "Leé también"}</p>
+          <ul className="mt-3 space-y-2">
+            {block.items.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="text-brand underline underline-offset-4 hover:text-brand-deep">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      );
     case "quote":
       return (
         <blockquote

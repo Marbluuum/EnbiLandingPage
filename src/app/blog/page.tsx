@@ -4,9 +4,9 @@ import { Band, JsonLd } from "@/components/ui";
 import { posts } from "@/content/posts";
 import { site } from "@/content/site";
 
-const title = "Blog de generación de leads y ventas B2B";
+const title = "Blog de marketing y ventas B2B para empresas de tecnología";
 const description =
-  "Guías prácticas sobre generación de leads B2B, prospección outbound, cliente ideal y procesos comerciales para empresas de tecnología.";
+  "Guías prácticas de marketing para empresas de tecnología: generación de leads B2B, contenido, SEO, LinkedIn, ABM, prospección outbound y métricas para software factories, SaaS y consultoras IT.";
 
 export const metadata: Metadata = {
   title: "Blog",

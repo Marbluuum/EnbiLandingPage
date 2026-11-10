@@ -6,7 +6,9 @@ export type Block =
   | { type: "h3"; text: string }
   | { type: "ul"; items: string[] }
   | { type: "ol"; items: string[] }
-  | { type: "quote"; text: string };
+  | { type: "quote"; text: string }
+  /** Internal links ("Leé también") to related guides or services — topic clusters for SEO. */
+  | { type: "links"; title?: string; items: { href: string; label: string }[] };
 
 export type Post = {
   slug: string;
