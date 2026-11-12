@@ -10,6 +10,7 @@ import { linkedinVentasB2b } from "./linkedin-ventas-b2b";
 import { marketingEmpresasTecnologia } from "./marketing-empresas-tecnologia";
 import { marketingSoftwareFactories } from "./marketing-software-factories";
 import { metricasMarketingB2b } from "./metricas-marketing-b2b";
+import { nearshoreEstadosUnidosEspana } from "./nearshore-estados-unidos-espana";
 import { seoEmpresasSoftware } from "./seo-empresas-software";
 
 /** Articles kept one per file (the original three live in posts.ts). */
@@ -22,6 +23,7 @@ export const newPosts: Post[] = [
   accountBasedMarketing,
   metricasMarketingB2b,
   // Generación de leads y prospección
+  nearshoreEstadosUnidosEspana,
   generacionDeLeadsB2b,
   coldEmailB2b,
   linkedinVentasB2b,
