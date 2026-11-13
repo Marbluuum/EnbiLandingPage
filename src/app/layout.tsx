@@ -17,8 +17,11 @@ const neulis = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  // Google Search Console ownership (property https://enbiconsulting.com/, account martin@enbiconsulting.com).
-  verification: { google: "-f-dfl3jHxWmOuHS49Zqk4L-ilsDuIkMNAFtr_fozqY" },
+  // Search engine ownership tags (Google Search Console and Bing Webmaster Tools, account martin@enbiconsulting.com).
+  verification: {
+    google: "-f-dfl3jHxWmOuHS49Zqk4L-ilsDuIkMNAFtr_fozqY",
+    other: { "msvalidate.01": "BDE446AC906FCBFFF4218EEE1B445DBB" },
+  },
   title: {
     default: site.title,
     template: `%s | ${site.name}`,
