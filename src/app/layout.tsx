@@ -17,6 +17,8 @@ const neulis = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  // Google Search Console ownership (property https://enbiconsulting.com/, account martin@enbiconsulting.com).
+  verification: { google: "-f-dfl3jHxWmOuHS49Zqk4L-ilsDuIkMNAFtr_fozqY" },
   title: {
     default: site.title,
     template: `%s | ${site.name}`,
