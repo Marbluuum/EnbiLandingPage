@@ -14,7 +14,7 @@ export function GET() {
     "",
     `> ${site.description}`,
     "",
-    `ENBI Consulting es una consultora de generación de demanda B2B para empresas de tecnología (software factories, empresas SaaS y consultoras IT), con presencia en todo Latinoamérica y España. Fundada por ${founder.name} (${founder.role}) en ${founder.location}. Combina automatización con un equipo humano para generar reuniones calificadas con decisores.`,
+    `ENBI Consulting es una agencia y consultora de generación de leads y demanda B2B especializada en empresas de tecnología (software factories, empresas SaaS y consultoras IT), con presencia en todo Latinoamérica y España. Fundada por ${founder.name} (${founder.role}) en ${founder.location}. Combina automatización con un equipo humano para generar reuniones calificadas con decisores.`,
     "",
     "## Servicios",
     ...services.map((s) => `- [${s.name}](${site.url}/servicios/${s.slug}): ${s.summary}`),

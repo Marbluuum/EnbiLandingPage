@@ -1,5 +1,6 @@
 import type { Post } from "../posts";
 import { accountBasedMarketing } from "./abm";
+import { agenciaLeadsSoftwareLatam } from "./agencia-leads-software-latam";
 import { agenciaVsSdr } from "./agencia-vs-sdr";
 import { calificarLeadsB2b } from "./calificar-leads-b2b";
 import { clientesConsultoraIt } from "./clientes-consultora-it";
@@ -24,6 +25,7 @@ export const newPosts: Post[] = [
   accountBasedMarketing,
   metricasMarketingB2b,
   // Generación de leads, prospección y ventas
+  agenciaLeadsSoftwareLatam,
   calificarLeadsB2b,
   nearshoreEstadosUnidosEspana,
   generacionDeLeadsB2b,
