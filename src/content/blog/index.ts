@@ -1,6 +1,7 @@
 import type { Post } from "../posts";
 import { accountBasedMarketing } from "./abm";
 import { agenciaVsSdr } from "./agencia-vs-sdr";
+import { calificarLeadsB2b } from "./calificar-leads-b2b";
 import { clientesConsultoraIt } from "./clientes-consultora-it";
 import { clientesSaasB2b } from "./clientes-saas-b2b";
 import { coldEmailB2b } from "./cold-email-b2b";
@@ -22,7 +23,8 @@ export const newPosts: Post[] = [
   seoEmpresasSoftware,
   accountBasedMarketing,
   metricasMarketingB2b,
-  // Generación de leads y prospección
+  // Generación de leads, prospección y ventas
+  calificarLeadsB2b,
   nearshoreEstadosUnidosEspana,
   generacionDeLeadsB2b,
   coldEmailB2b,
