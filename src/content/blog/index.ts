@@ -1,6 +1,7 @@
 import type { Post } from "../posts";
 import { accountBasedMarketing } from "./abm";
 import { agenciaLeadsSoftwareLatam } from "./agencia-leads-software-latam";
+import { agenciaMarketingEmpresasSoftware } from "./agencia-marketing-empresas-software";
 import { agenciaVsSdr } from "./agencia-vs-sdr";
 import { calificarLeadsB2b } from "./calificar-leads-b2b";
 import { clientesConsultoraIt } from "./clientes-consultora-it";
@@ -21,6 +22,7 @@ import { venderSoftwareEmpresas } from "./vender-software-empresas";
 /** Articles kept one per file (the original three live in posts.ts). */
 export const newPosts: Post[] = [
   // Marketing para empresas de tecnología (topic cluster: pillar + supporting guides)
+  agenciaMarketingEmpresasSoftware,
   marketingEmpresasTecnologia,
   marketingSoftwareFactories,
   estrategiaContenidosB2b,
