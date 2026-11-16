@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BookingEmbed } from "@/components/booking-embed";
+import { BookingCalendar } from "@/components/booking-calendar";
 import { PageHero, breadcrumbJsonLd } from "@/components/sections";
 import { Band, JsonLd } from "@/components/ui";
 import { site } from "@/content/site";
@@ -48,7 +48,18 @@ export default function ContactoPage() {
               ))}
             </ul>
           </div>
-          <BookingEmbed />
+          <div>
+            <div className="overflow-hidden rounded-[20px] border border-card-border">
+              <BookingCalendar />
+            </div>
+            <p className="mt-4 text-center text-sm text-black/60">
+              ¿No ves el calendario?{" "}
+              <a href={site.bookingUrl} target="_blank" rel="noopener" className="text-brand underline underline-offset-4">
+                Abrilo en una pestaña nueva
+              </a>
+              .
+            </p>
+          </div>
         </div>
       </Band>
     </>
