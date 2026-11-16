@@ -12,7 +12,7 @@ export function Header() {
         </Link>
 
         <nav aria-label="Principal" className="hidden lg:block">
-          <ul className="flex items-center gap-9 text-[17px]">
+          <ul className="flex items-center gap-6 text-[16px] whitespace-nowrap xl:gap-9 xl:text-[17px]">
             {nav.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="transition-colors hover:text-brand">
@@ -23,7 +23,7 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden shrink-0 whitespace-nowrap lg:block">
           <BookingButton small>Agendar reunión</BookingButton>
         </div>
 
