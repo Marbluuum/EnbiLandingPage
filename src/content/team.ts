@@ -3,7 +3,7 @@ export const founder = {
   role: "Founder & CEO",
   location: "Buenos Aires, Argentina",
   photo: { src: "/equipo/martin-bufczyk-2026.webp", width: 560, height: 700 },
-  linkedin: "https://www.linkedin.com/in/martinbufczyk/",
+  linkedin: "https://www.linkedin.com/in/martinbufczyk",
   website: "https://www.martinbufczyk.com/",
   quote:
     "Haber programado me permite hablar el idioma de las empresas tech. Haber vendido me permite traducir lo que construyen en clientes.",
