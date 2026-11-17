@@ -15,6 +15,7 @@ import { marketingSoftwareFactories } from "./marketing-software-factories";
 import { metricasMarketingB2b } from "./metricas-marketing-b2b";
 import { nearshoreEstadosUnidosEspana } from "./nearshore-estados-unidos-espana";
 import { prospeccionB2bConIa } from "./prospeccion-b2b-con-ia";
+import { queEsMarketingB2b } from "./que-es-marketing-b2b";
 import { queEsUnCrm } from "./que-es-un-crm";
 import { seoEmpresasSoftware } from "./seo-empresas-software";
 import { venderSoftwareEmpresas } from "./vender-software-empresas";
@@ -22,6 +23,7 @@ import { venderSoftwareEmpresas } from "./vender-software-empresas";
 /** Articles kept one per file (the original three live in posts.ts). */
 export const newPosts: Post[] = [
   // Marketing para empresas de tecnología (topic cluster: pillar + supporting guides)
+  queEsMarketingB2b,
   agenciaMarketingEmpresasSoftware,
   marketingEmpresasTecnologia,
   marketingSoftwareFactories,
