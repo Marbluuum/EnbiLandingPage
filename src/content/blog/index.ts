@@ -7,6 +7,7 @@ import { calificarLeadsB2b } from "./calificar-leads-b2b";
 import { clientesConsultoraIt } from "./clientes-consultora-it";
 import { clientesSaasB2b } from "./clientes-saas-b2b";
 import { coldEmailB2b } from "./cold-email-b2b";
+import { comoHacerProspeccion } from "./como-hacer-prospeccion";
 import { estrategiaContenidosB2b } from "./estrategia-contenidos-b2b";
 import { generacionDeLeadsB2b } from "./generacion-de-leads-b2b";
 import { linkedinVentasB2b } from "./linkedin-ventas-b2b";
@@ -32,6 +33,7 @@ export const newPosts: Post[] = [
   accountBasedMarketing,
   metricasMarketingB2b,
   // Generación de leads, prospección y ventas
+  comoHacerProspeccion,
   queEsUnCrm,
   prospeccionB2bConIa,
   venderSoftwareEmpresas,
