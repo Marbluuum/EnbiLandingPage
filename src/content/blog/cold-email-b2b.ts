@@ -7,6 +7,7 @@ export const coldEmailB2b: Post = {
     "Cómo hacer cold email B2B bien: configuración del dominio (SPF, DKIM, DMARC), estructura de un correo en frío, secuencias de seguimiento y errores que te mandan a spam.",
   category: "Prospección",
   date: "2026-11-09",
+  updated: "2026-11-19",
   readingMinutes: 8,
   answer:
     "Un cold email B2B que consigue reuniones es corto (menos de 120 palabras), está dirigido a una persona que encaja con tu cliente ideal, abre con algo específico de su empresa, plantea un problema concreto y termina con una pregunta fácil de responder. Para no ir a spam, el dominio de envío necesita SPF, DKIM y DMARC configurados, calentamiento progresivo y volúmenes bajos por casilla.",
@@ -40,6 +41,10 @@ export const coldEmailB2b: Post = {
         "Mantené volúmenes bajos por casilla y repartí los envíos entre varias si necesitás más alcance.",
         "Verificá los emails antes de enviar para no rebotar: los rebotes dañan la reputación del dominio.",
       ],
+    },
+    {
+      type: "links",
+      items: [{ href: "/blog/calentamiento-de-emails-en-frio", label: "Calentamiento de emails (email warm-up): guía paso a paso" }],
     },
     { type: "h2", text: "2. Escribí para una persona, no para una base de datos" },
     {

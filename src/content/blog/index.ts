@@ -3,6 +3,7 @@ import { accountBasedMarketing } from "./abm";
 import { agenciaLeadsSoftwareLatam } from "./agencia-leads-software-latam";
 import { agenciaMarketingEmpresasSoftware } from "./agencia-marketing-empresas-software";
 import { agenciaVsSdr } from "./agencia-vs-sdr";
+import { calentamientoEmails } from "./calentamiento-emails";
 import { calificarLeadsB2b } from "./calificar-leads-b2b";
 import { clientesConsultoraIt } from "./clientes-consultora-it";
 import { clientesSaasB2b } from "./clientes-saas-b2b";
@@ -33,6 +34,7 @@ export const newPosts: Post[] = [
   accountBasedMarketing,
   metricasMarketingB2b,
   // Generación de leads, prospección y ventas
+  calentamientoEmails,
   comoHacerProspeccion,
   queEsUnCrm,
   prospeccionB2bConIa,
