@@ -7,6 +7,7 @@ export const clientesSaasB2b: Post = {
     "Estrategia para conseguir clientes para un SaaS B2B en Latinoamérica y España: ICP por país, outbound, demos que convierten, contenido, partners y métricas clave.",
   category: "Generación de leads",
   date: "2026-11-09",
+  updated: "2026-11-21",
   readingMinutes: 8,
   answer:
     "Para conseguir clientes para un SaaS B2B en Latinoamérica y España conviene empezar por un nicho y un país concretos, validar el cliente ideal con outbound (email y LinkedIn) hacia decisores, convertir el interés en demos personalizadas, sumar contenido y SEO en español que responda las dudas del comprador y apoyarse en partners locales. Medir demos, conversión a pago y retención indica dónde escalar.",
@@ -53,6 +54,10 @@ export const clientesSaasB2b: Post = {
     {
       type: "quote",
       text: "Una demo no es un tour por todas las funciones: es la prueba de que entendiste el problema del cliente.",
+    },
+    {
+      type: "links",
+      items: [{ href: "/blog/convertir-usuarios-en-clientes-saas", label: "Cómo convertir usuarios de prueba en clientes que pagan" }],
     },
     { type: "h2", text: "4. Contenido y SEO en español" },
     {
