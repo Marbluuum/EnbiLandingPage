@@ -10,7 +10,15 @@ export type Case = {
   quote: string;
   /** Short highlight shown in bold inside the quote on cards. */
   highlight: string;
-  video: { src: string; poster: string; vertical: boolean; duration: string; durationIso: string };
+  video: {
+    src: string;
+    poster: string;
+    vertical: boolean;
+    duration: string;
+    durationIso: string;
+    /** When the file was uploaded (Last-Modified of the CDN object), for VideoObject structured data. */
+    uploadDate: string;
+  };
   /** Optional long-form fields: rendered only when filled in. */
   challenge?: string;
   solution?: string;
@@ -31,7 +39,7 @@ export const cases: Case[] = [
     tag: "Resultados inmediatos",
     quote: "Desde el primer mes pudimos cerrar tres clientes gracias al sistema de ENBI.",
     highlight: "pudimos cerrar tres clientes",
-    video: { src: `${filesafe}/6a8e204b67bb7ac351af29bc.mp4`, poster: "/casos/inzaiq.webp", vertical: true, duration: "4:26", durationIso: "PT4M26S" },
+    video: { src: `${filesafe}/6a8e204b67bb7ac351af29bc.mp4`, poster: "/casos/inzaiq.webp", vertical: true, duration: "4:26", durationIso: "PT4M26S", uploadDate: "2026-08-25T23:08:01Z" },
   },
   {
     slug: "megapractical",
@@ -43,7 +51,7 @@ export const cases: Case[] = [
     tag: "Resultados inmediatos",
     quote: "Obtuvimos resultados inmediatos en el corto plazo gracias al sistema de ENBI.",
     highlight: "resultados inmediatos en el corto plazo",
-    video: { src: `${filesafe}/6a3df031cb92c4e0c88a3176.mp4`, poster: "/casos/megapractical.webp", vertical: true, duration: "8:52", durationIso: "PT8M52S" },
+    video: { src: `${filesafe}/6a3df031cb92c4e0c88a3176.mp4`, poster: "/casos/megapractical.webp", vertical: true, duration: "8:52", durationIso: "PT8M52S", uploadDate: "2026-06-26T03:21:44Z" },
   },
   {
     slug: "softnet",
@@ -60,7 +68,7 @@ export const cases: Case[] = [
       poster: "/casos/softnet.webp",
       vertical: true,
       duration: "0:20",
-      durationIso: "PT20S",
+      durationIso: "PT20S", uploadDate: "2025-09-28T02:41:49Z",
     },
   },
   {
@@ -78,7 +86,7 @@ export const cases: Case[] = [
       poster: "/casos/web3d.webp",
       vertical: false,
       duration: "1:03",
-      durationIso: "PT1M3S",
+      durationIso: "PT1M3S", uploadDate: "2025-09-28T02:10:40Z",
     },
   },
 ];

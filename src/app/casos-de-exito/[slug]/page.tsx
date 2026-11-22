@@ -43,6 +43,34 @@ export default async function CasePage(props: PageProps<"/casos-de-exito/[slug]"
   return (
     <>
       <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "VideoObject",
+              "@id": `${url}#video`,
+              name: `Caso de éxito ${c.company}: ${c.fullName}, ${c.role}`,
+              description: describe(c),
+              thumbnailUrl: `${site.url}${c.video.poster}`,
+              contentUrl: c.video.src,
+              uploadDate: c.video.uploadDate,
+              duration: c.video.durationIso,
+              inLanguage: "es",
+              publisher: { "@id": `${site.url}/#organization` },
+              about: { "@id": `${site.url}/#organization` },
+            },
+            {
+              "@type": "Review",
+              "@id": `${url}#review`,
+              reviewBody: c.quote,
+              author: { "@type": "Person", name: c.fullName, jobTitle: c.role, worksFor: { "@type": "Organization", name: c.company } },
+              itemReviewed: { "@id": `${site.url}/#organization` },
+              associatedMedia: { "@id": `${url}#video` },
+            },
+          ],
+        }}
+      />
+      <JsonLd
         data={breadcrumbJsonLd([
           { name: "Inicio", url: site.url },
           { name: "Casos de éxito", url: `${site.url}/casos-de-exito` },

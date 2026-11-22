@@ -3,9 +3,9 @@ export const site = {
   shortName: "ENBI",
   url: "https://enbiconsulting.com",
   locale: "es_AR",
-  title: "ENBI Consulting | Generación de leads B2B para empresas de tecnología",
+  title: "ENBI Consulting | Agencia de generación de leads B2B para empresas de tecnología",
   description:
-    "Generación de leads B2B para empresas de tecnología: definimos tu cliente ideal, prospectamos con automatización + equipo humano y te agendamos reuniones calificadas con decisores todas las semanas.",
+    "Agencia de generación de leads y marketing B2B para empresas de software, SaaS y consultoras IT de Latinoamérica y España. Reuniones con decisores, todas las semanas.",
   bookingUrl: "https://api.leadconnectorhq.com/widget/booking/P0ZeEhqHTsmesoitQyL9",
   keywords: [
     "generación de leads B2B",
