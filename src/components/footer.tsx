@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { cases } from "@/content/cases";
 import { services } from "@/content/services";
+import { founder } from "@/content/team";
 import { Logo } from "./ui";
 
 async function CurrentYear() {
@@ -22,6 +23,7 @@ export function Footer() {
       title: "ENBI",
       links: [
         { href: "/#metodo", label: "Método" },
+        { href: "/nosotros", label: "Quiénes somos" },
         { href: "/blog", label: "Blog" },
         { href: "/contacto", label: "Contacto" },
       ],
@@ -42,6 +44,13 @@ export function Footer() {
           <Link href="/#agendar" className="mt-5 inline-block text-brand hover:underline">
             Agendar reunión →
           </Link>
+          <p className="mt-6 text-[15px] text-black/60">
+            Fundada por{" "}
+            <a href={founder.linkedin} target="_blank" rel="noopener me" className="text-black underline underline-offset-4 hover:text-brand">
+              {founder.name} en LinkedIn
+              <span className="sr-only"> (se abre en una pestaña nueva)</span>
+            </a>
+          </p>
         </div>
         {columns.map((col) => (
           <nav key={col.title} aria-label={col.title}>
