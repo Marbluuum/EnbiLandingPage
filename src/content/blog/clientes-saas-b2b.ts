@@ -7,7 +7,7 @@ export const clientesSaasB2b: Post = {
     "Estrategia para conseguir clientes para un SaaS B2B en Latinoamérica y España: ICP por país, outbound, demos que convierten, contenido, partners y métricas clave.",
   category: "Generación de leads",
   date: "2026-11-09",
-  updated: "2026-11-21",
+  updated: "2026-11-23",
   readingMinutes: 8,
   answer:
     "Para conseguir clientes para un SaaS B2B en Latinoamérica y España conviene empezar por un nicho y un país concretos, validar el cliente ideal con outbound (email y LinkedIn) hacia decisores, convertir el interés en demos personalizadas, sumar contenido y SEO en español que responda las dudas del comprador y apoyarse en partners locales. Medir demos, conversión a pago y retención indica dónde escalar.",
@@ -77,6 +77,10 @@ export const clientesSaasB2b: Post = {
     {
       type: "p",
       text: "Consultoras, integradores y estudios contables o legales que ya trabajan con tu cliente ideal pueden recomendarte con una confianza que un anuncio no consigue. Un programa de partners bien armado suma oportunidades de alta calidad.",
+    },
+    {
+      type: "links",
+      items: [{ href: "/blog/como-conseguir-prescriptores-saas", label: "Cómo conseguir prescriptores: programa de partners y referidos" }],
     },
     { type: "h2", text: "6. Las métricas que importan en un SaaS B2B" },
     {
