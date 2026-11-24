@@ -7,6 +7,7 @@ export const seoEmpresasSoftware: Post = {
     "Guía de SEO y AEO para empresas de software, SaaS y consultoras IT: palabras clave con intención de compra, contenido experto, SEO técnico y cómo lograr que ChatGPT, Perplexity y Google IA te citen.",
   category: "Marketing B2B",
   date: "2026-11-10",
+  updated: "2026-11-24",
   readingMinutes: 9,
   answer:
     "El SEO para empresas de software B2B consiste en posicionar las páginas de servicios y el contenido para las búsquedas que hace tu cliente ideal cuando tiene un problema que resolvés. Requiere elegir palabras clave con intención de compra, publicar guías expertas con respuestas directas, una web rápida y técnicamente impecable con datos estructurados, y casos de éxito que generen confianza. Lo mismo hace que ChatGPT y otras IA te citen.",
@@ -48,6 +49,10 @@ export const seoEmpresasSoftware: Post = {
         "Comparativas: “Odoo vs SAP Business One para pymes”.",
         "Costos y plazos: “cuánto cuesta desarrollar una app para empresas”.",
       ],
+    },
+    {
+      type: "links",
+      items: [{ href: "/blog/seo-para-software-factories", label: "SEO para software factories y empresas de desarrollo a medida (incluye nearshore)" }],
     },
     { type: "h2", text: "2. Páginas de servicio que respondan y conviertan" },
     {

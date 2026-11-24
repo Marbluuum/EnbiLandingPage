@@ -22,11 +22,13 @@ import { prospeccionB2bConIa } from "./prospeccion-b2b-con-ia";
 import { queEsMarketingB2b } from "./que-es-marketing-b2b";
 import { queEsUnCrm } from "./que-es-un-crm";
 import { seoEmpresasSoftware } from "./seo-empresas-software";
+import { seoSoftwareFactories } from "./seo-software-factories";
 import { venderSoftwareEmpresas } from "./vender-software-empresas";
 
 /** Articles kept one per file (the original three live in posts.ts). */
 export const newPosts: Post[] = [
   // Marketing para empresas de tecnología (topic cluster: pillar + supporting guides)
+  seoSoftwareFactories,
   queEsMarketingB2b,
   agenciaMarketingEmpresasSoftware,
   marketingEmpresasTecnologia,
