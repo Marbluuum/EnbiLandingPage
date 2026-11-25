@@ -7,6 +7,7 @@ export const venderSoftwareEmpresas: Post = {
     "Cómo vender software a empresas paso a paso: cliente ideal, propuesta de valor en términos de negocio, prospección, demos, propuestas, objeciones y cierre en ventas B2B de software y SaaS.",
   category: "Estrategia comercial",
   date: "2026-11-14",
+  updated: "2026-11-25",
   readingMinutes: 10,
   answer:
     "Para vender software a empresas hay que dejar de vender funciones y vender resultados: elegir un tipo de empresa concreto, entender qué problema le cuesta dinero, llegar a sus decisores con prospección directa y contenido, mostrar el valor con demos o diagnósticos adaptados a su caso, presentar propuestas claras con alcance y retorno, y acompañar un proceso de compra en el que participan varias personas y que suele llevar semanas o meses.",
@@ -96,6 +97,10 @@ export const venderSoftwareEmpresas: Post = {
     {
       type: "p",
       text: "Una propuesta de software B2B debería poder leerse en cinco minutos: el problema con las palabras del cliente, la solución, el alcance (qué incluye y qué no), los plazos, el equipo, la inversión y el retorno esperado. Las propuestas largas y técnicas suelen quedar en un cajón porque nadie se anima a presentarlas internamente.",
+    },
+    {
+      type: "links",
+      items: [{ href: "/blog/como-vender-software-erp", label: "Si vendés un ERP: guía específica para partners e implementadores" }],
     },
     { type: "h2", text: "8. Objeciones habituales al vender software" },
     {

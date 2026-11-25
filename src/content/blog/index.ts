@@ -24,6 +24,7 @@ import { queEsUnCrm } from "./que-es-un-crm";
 import { seoEmpresasSoftware } from "./seo-empresas-software";
 import { seoSoftwareFactories } from "./seo-software-factories";
 import { venderSoftwareEmpresas } from "./vender-software-empresas";
+import { venderSoftwareErp } from "./vender-software-erp";
 
 /** Articles kept one per file (the original three live in posts.ts). */
 export const newPosts: Post[] = [
@@ -38,6 +39,7 @@ export const newPosts: Post[] = [
   accountBasedMarketing,
   metricasMarketingB2b,
   // Generación de leads, prospección y ventas
+  venderSoftwareErp,
   prescriptoresSaas,
   convertirUsuariosClientesSaas,
   calentamientoEmails,

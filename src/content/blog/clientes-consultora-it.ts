@@ -7,6 +7,7 @@ export const clientesConsultoraIt: Post = {
     "Cómo consiguen clientes las consultoras IT e implementadores de ERP y CRM: especialización, señales de compra, prospección a decisores, contenido técnico y alianzas con el fabricante.",
   category: "Generación de leads",
   date: "2026-11-09",
+  updated: "2026-11-25",
   readingMinutes: 7,
   answer:
     "Una consultora IT o partner de software consigue clientes de forma previsible cuando se especializa en una industria o problema, detecta señales de compra (crecimiento, sistemas legados, nuevas regulaciones), prospecta a decisores con mensajes basados en casos reales, publica contenido técnico que responde dudas de implementación y aprovecha su relación con el fabricante y otros partners.",
@@ -57,6 +58,10 @@ export const clientesConsultoraIt: Post = {
     {
       type: "quote",
       text: "Al gerente general le importa el costo y el riesgo; al de operaciones, dejar de pelear con planillas. El mismo proyecto se vende con dos mensajes distintos.",
+    },
+    {
+      type: "links",
+      items: [{ href: "/blog/como-vender-software-erp", label: "Cómo vender software ERP e implementaciones" }],
     },
     { type: "h2", text: "4. Contenido técnico que genera confianza" },
     {
