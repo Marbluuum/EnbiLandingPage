@@ -7,6 +7,7 @@ export const metricasMarketingB2b: Post = {
     "Qué métricas de marketing B2B importan en una empresa de tecnología, cómo calcular el costo por reunión, el CAC y el ROI, y cómo armar un tablero simple que conecte marketing con ventas.",
   category: "Marketing B2B",
   date: "2026-11-10",
+  updated: "2026-11-28",
   readingMinutes: 7,
   answer:
     "Para medir el marketing B2B en una empresa de tecnología hay que seguir el embudo completo, no solo métricas de alcance: cuentas alcanzadas, respuestas, reuniones calificadas, oportunidades, clientes ganados e ingresos. Con esos datos se calculan el costo por reunión, el costo de adquisición de clientes (CAC) y el retorno de la inversión (ROI = ingresos atribuibles menos inversión, dividido por la inversión).",
@@ -65,6 +66,10 @@ export const metricasMarketingB2b: Post = {
     {
       type: "p",
       text: "Ingresos atribuibles a marketing menos la inversión, dividido por la inversión. En B2B, con ciclos de venta largos, conviene medirlo en períodos de varios meses y contar también las oportunidades abiertas.",
+    },
+    {
+      type: "links",
+      items: [{ href: "/blog/cuanto-cuesta-la-generacion-de-leads-b2b-roi", label: "Cuánto cuesta la generación de leads B2B y cómo calcular su ROI (con ejemplo)" }],
     },
     { type: "h2", text: "Un tablero simple para empezar" },
     {

@@ -7,6 +7,7 @@ export const generacionDeLeadsB2b: Post = {
     "Guía completa de generación de leads B2B para empresas de tecnología: qué es un lead calificado, los canales que funcionan, cómo armar el proceso y qué métricas seguir.",
   category: "Generación de leads",
   date: "2026-11-09",
+  updated: "2026-11-28",
   readingMinutes: 9,
   answer:
     "La generación de leads B2B es el proceso de identificar y atraer empresas que pueden comprar tu producto o servicio, y convertirlas en conversaciones comerciales con decisores. Combina un cliente ideal bien definido, canales outbound (email, LinkedIn, teléfono) e inbound (contenido, SEO, anuncios), calificación de oportunidades y medición de cada etapa del embudo.",
@@ -105,6 +106,10 @@ export const generacionDeLeadsB2b: Post = {
     {
       type: "p",
       text: "Con estas métricas sabés dónde está el cuello de botella: si el problema es la lista, el mensaje, la calificación o el cierre.",
+    },
+    {
+      type: "links",
+      items: [{ href: "/blog/cuanto-cuesta-la-generacion-de-leads-b2b-roi", label: "Cuánto cuesta la generación de leads B2B y cómo calcular su ROI" }],
     },
     { type: "h2", text: "Errores comunes en la generación de leads B2B" },
     {
